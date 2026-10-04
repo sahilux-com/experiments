@@ -234,3 +234,97 @@ button.active {
     background: #ff00ff;
     box-shadow: 0 0 8px #ff00ff;
 }
+/* Hairline Figures */
+#hairline-open-btn {
+    margin-top: 8px;
+}
+
+#hairline-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: rgba(5, 5, 5, 0.94);
+    backdrop-filter: blur(12px);
+    overflow-y: auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+#hairline-overlay[hidden] {
+    display: none;
+}
+
+#hairline-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    max-width: 1280px;
+    margin: 0 auto 24px;
+    border-bottom: 1px solid var(--gray4);
+    padding-bottom: 12px;
+}
+
+#hairline-header h1 {
+    margin: 0;
+    border: none;
+    padding: 0;
+    flex: 1;
+}
+
+#hairline-intensity-group {
+    margin: 0;
+    width: 200px;
+}
+
+#hairline-close-btn {
+    padding: 8px;
+}
+
+#hairline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.hairline-card {
+    background: var(--gray1);
+    border: 1px solid var(--gray6);
+    border-radius: 12px;
+    overflow: hidden;
+    /* Plates are filled, so match them to the card */
+    --hairline-plate: var(--gray1);
+    --hairline-hi: var(--accent9);
+}
+
+.hairline-meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-top: 1px solid var(--gray4);
+    font-size: 0.8rem;
+    color: var(--gray11);
+    text-transform: capitalize;
+}
+
+.hairline-reading {
+    color: var(--gray9);
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+}
+
+@media (max-width: 600px) {
+    #hairline-overlay {
+        padding: 16px;
+    }
+
+    #hairline-header {
+        flex-wrap: wrap;
+    }
+
+    #hairline-intensity-group {
+        width: 100%;
+        order: 3;
+    }
+}

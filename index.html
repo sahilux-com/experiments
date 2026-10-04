@@ -65,6 +65,7 @@
         </div>
 
         <button id="start-tracking-btn" style="width:100%">Start Tracking</button>
+        <button id="hairline-open-btn" style="width:100%"><i data-lucide="shapes"></i> Hairline Figures</button>
 
         <div class="status">
             <div style="display:flex; align-items:center;">
@@ -75,18 +76,39 @@
         <div id="voice-status" style="display:none"></div> <!-- Helper for voice log if needed -->
     </div>
 
+    <!-- Hairline Figures -->
+    <div id="hairline-overlay" hidden>
+        <div id="hairline-header">
+            <h1>Hairline Figures</h1>
+            <div class="control-group" id="hairline-intensity-group">
+                <div style="display:flex; justify-content:space-between;">
+                    <label>Intensity</label>
+                    <span id="hairline-intensity-val">0.50</span>
+                </div>
+                <input type="range" id="hairline-intensity" min="0" max="1" step="0.05" value="0.5">
+            </div>
+            <button id="hairline-close-btn" aria-label="Close"><i data-lucide="x"></i></button>
+        </div>
+        <div id="hairline-grid"></div>
+    </div>
+
     <!-- Import Maps -->
     <script type="importmap">
         {
             "imports": {
                 "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
                 "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
-                "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3"
+                "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3",
+                "@lucasmarkes/hairline": "https://cdn.jsdelivr.net/npm/@lucasmarkes/hairline@0.2.0/dist/index.js"
             }
         }
     </script>
 
     <script type="module" src="js/main.js"></script>
+    <script type="module">
+        import { initHairline } from './js/hairline.js';
+        initHairline();
+    </script>
 </body>
 
 </html>
