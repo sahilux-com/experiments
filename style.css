@@ -298,6 +298,11 @@ button.active {
     --hairline-hi: var(--accent9);
 }
 
+/* Coupons: the % badge is the figure's only bright stroke, so it alone turns blue */
+.hairline-card--coupons {
+    --hairline-hi: #4c8dff;
+}
+
 .hairline-meta {
     display: flex;
     justify-content: space-between;
